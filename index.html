@@ -17,7 +17,8 @@
           if (file.name.endsWith(".html") && file.name !== "index.html") {
             const itemElement = document.createElement("li");
             const linkElement = document.createElement("a");
-            linkElement.href = file.html_url;
+            const currentPath = window.location.href.replace("index.html", "");
+            linkElement.href = currentPath + file.name;
             linkElement.textContent = file.name;
             linkElement.target = "_blank";
             itemElement.appendChild(linkElement);
